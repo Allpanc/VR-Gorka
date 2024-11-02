@@ -1,0 +1,16 @@
+{
+    "name": "RouteFollowers",
+    "rootNamespace": "",
+    "references": [
+        "Dreamteck.Splines"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

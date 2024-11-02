@@ -1,0 +1,21 @@
+{
+    "name": "TrainViewGeneration",
+    "rootNamespace": "",
+    "references": [
+        "TrainDataGeneration",
+        "RouteFollowers",
+        "Dreamteck.Splines",
+        "Unity.TextMeshPro",
+        "RouteJournal",
+        "Movables"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

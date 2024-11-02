@@ -1,0 +1,24 @@
+{
+    "name": "EntryPoint",
+    "rootNamespace": "",
+    "references": [
+        "TrainDataGeneration",
+        "TrainViewGeneration",
+        "Dreamteck.Splines",
+        "UI",
+        "WagonListDataGeneration",
+        "RouteControls",
+        "Movables",
+        "PlayerComponents",
+        "GameStates"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
