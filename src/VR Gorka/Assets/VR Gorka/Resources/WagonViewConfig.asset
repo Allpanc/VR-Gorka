@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7b613be05e489fb8aa1231926b2f22, type: 3}
+  m_Name: WagonViewConfig
+  m_EditorClassIdentifier: 
+  wagonGap: 0.03
+  timeBetweenWagons: 3
+  wagonsSpeed: 8
+  wagonPrefabs:
+  - type: 0
+    prefab: {fileID: 6592573733331753297, guid: 19a719c7e2f82e5408ab99bc2fa52dfd, type: 3}
+  - type: 1
+    prefab: {fileID: 740044890635642865, guid: e0a270fbe582e464582739b95ea90d96, type: 3}
+  - type: 2
+    prefab: {fileID: 6124314959062722349, guid: d03d6bed5951f4541a98867601b8cff6, type: 3}

@@ -1,0 +1,17 @@
+{
+    "name": "RouteControls",
+    "rootNamespace": "",
+    "references": [
+        "TrainViewGeneration",
+        "RouteFollowers"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

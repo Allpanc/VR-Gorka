@@ -1,0 +1,17 @@
+{
+    "name": "VrGorka",
+    "rootNamespace": "",
+    "references": [
+        "Dreamteck.Splines",
+        "TrainDataGeneration"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

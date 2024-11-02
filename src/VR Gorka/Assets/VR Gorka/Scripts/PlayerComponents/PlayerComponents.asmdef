@@ -1,0 +1,23 @@
+{
+    "name": "PlayerComponents",
+    "rootNamespace": "",
+    "references": [
+        "Movables",
+        "RouteControls",
+        "RouteFollowers",
+        "RouteJournal",
+        "TrainDataGeneration",
+        "TrainViewGeneration",
+        "WagonListDataGeneration",
+        "Dreamteck.Splines"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
