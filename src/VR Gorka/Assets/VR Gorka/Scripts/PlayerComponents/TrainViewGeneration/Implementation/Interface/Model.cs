@@ -10,6 +10,7 @@ namespace VrGorka.TrainViewGeneration.Interface
 
         public float timeBetweenWagons => _wagonViewConfig.timeBetweenWagons;
         public float wagonsSpeed => _wagonViewConfig.wagonsSpeed;
+        public float wagonGap => _wagonViewConfig.wagonGap;
 
         TrainViewData _trainViewData;
         

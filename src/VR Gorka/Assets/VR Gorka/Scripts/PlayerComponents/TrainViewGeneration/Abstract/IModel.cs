@@ -5,5 +5,6 @@ namespace VrGorka.TrainViewGeneration
         TrainViewData trainViewData { get; internal set; }
         float timeBetweenWagons { get; }
         float wagonsSpeed { get; }
+        float wagonGap { get; }
     }
 }

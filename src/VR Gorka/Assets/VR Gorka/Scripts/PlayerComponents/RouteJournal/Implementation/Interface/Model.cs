@@ -14,7 +14,7 @@ namespace VrGorka.RouteJournal.Interface
         
         public Dictionary<string, Status> GetStatusMap()
         {
-            return _journalData.statusMap
+            Dictionary<string,Status> statusMap = _journalData.statusMap
                 .ToDictionary(
                     x => x.Key,
                     x => x.Value.isSwitched
@@ -22,6 +22,16 @@ namespace VrGorka.RouteJournal.Interface
                             ? Status.Success
                             : Status.Fail
                         : Status.Unset);
+            
+            return statusMap;
+        }
+
+        public int GetWagonsCountOnRoute(int routeIndex)
+        {
+            return _journalData.statusMap.Values
+                .ToList()
+                .FindAll(x => x.chosenTrack == routeIndex)
+                .Count();
         }
     }
 }

@@ -5,5 +5,6 @@ namespace VrGorka.RouteJournal
     public interface IModel
     {
         Dictionary<string, Status> GetStatusMap();
+        int GetWagonsCountOnRoute(int routeIndex);
     }
 }

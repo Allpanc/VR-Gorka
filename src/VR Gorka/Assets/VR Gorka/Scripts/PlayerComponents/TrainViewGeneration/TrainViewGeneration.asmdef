@@ -7,7 +7,8 @@
         "Dreamteck.Splines",
         "Unity.TextMeshPro",
         "RouteJournal",
-        "Movables"
+        "Movables",
+        "RouteStop"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

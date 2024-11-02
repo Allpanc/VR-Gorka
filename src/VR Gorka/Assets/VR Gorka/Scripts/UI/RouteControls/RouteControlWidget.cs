@@ -13,10 +13,17 @@ namespace VrGorka.UI
             public int routeIndex;
         }
 
+        public bool isOutlined
+        {
+            get => _outlineImage.enabled;
+            set => _outlineImage.enabled = value;
+        }
+        
         public event Action<int> routeChangeRequired;
         
         [SerializeField] Button _button;
         [SerializeField] TMP_Text _text;
+        [SerializeField] Image _outlineImage;
 
         int _routeIndex;
         

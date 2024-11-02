@@ -42,6 +42,11 @@ namespace VrGorka.UI
 
         private void OnRouteChangeRequired(int routeIndex)
         {
+            for (var i = 0; i < routeControlWidgets.Count; i++)
+            {
+                routeControlWidgets[i].isOutlined = i == routeIndex;
+            }
+            
             if (_routeControlsModel.activeRoute == routeIndex)
             {
                 return;

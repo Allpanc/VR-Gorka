@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace VrGorka.GameStates
@@ -11,9 +12,11 @@ namespace VrGorka.GameStates
             _playerComponents.routeJournalComponent.events;
         RouteJournal.IModel routeJournalModel =>
             _playerComponents.routeJournalComponent.model;
-        
         TrainViewGeneration.IModel trainViewModel =>
             _playerComponents.trainViewGeneratorComponent.model;
+        
+        RouteParameters.IRouteParametersProvider routeParametersProvider =>
+            _playerComponents.routeParametersComponent.routeParametersProvider;
         
         readonly GameStateMachine _gameStateMachine;
         readonly PlayerComponents.PlayerComponents _playerComponents;
@@ -55,7 +58,22 @@ namespace VrGorka.GameStates
 
         private void OnRouteSwitched(string id, int routeIndex)
         {
+            SetStopPercent(id, routeIndex);
+
             _playerComponents.routeJournalComponent.controller.SetChosenTrack(id, routeIndex);
+        }
+
+        private void SetStopPercent(string id, int routeIndex)
+        {
+            TrainViewGeneration.WagonView wagonView = trainViewData.wagonViews
+                .Find(x => x.id == id);
+            
+            var wagonsCountOnChosenRoute = routeJournalModel.GetWagonsCountOnRoute(routeIndex);
+            float wagonGapForChosenRoute = routeParametersProvider.GetWagonGapForRoute(routeIndex);
+            float stopPercent = 1 - (wagonGapForChosenRoute * wagonsCountOnChosenRoute);
+            RouteStop.IRouteStopper routeStopper = wagonView.routeStopper;
+            routeStopper.SetStopPercent(stopPercent);
+            routeStopper.isActive = true;
         }
 
         public void Exit()
@@ -65,10 +83,6 @@ namespace VrGorka.GameStates
             routeJournalEvents.wrongTrackChosen -= OnWrongTrackChosen;
             routeJournalEvents.rightTrackChosen -= OnRightTrackChosen;
             routeJournalEvents.succesfullyCompleted -= OnSuccessfullyCompleted;
-            
-            _coroutineRunner.EndCoroutine(_wagonsCoroutine);
-
-            StopWagons();
         }
 
         private void OnRightTrackChosen()
@@ -79,6 +93,10 @@ namespace VrGorka.GameStates
         private void OnWrongTrackChosen()
         {
             _wagonListMenu.UpdateStatus(routeJournalModel.GetStatusMap());
+            
+            _coroutineRunner.EndCoroutine(_wagonsCoroutine);
+            StopWagons();
+            
             _gameStateMachine.Enter<LoseState>();
         }
 
