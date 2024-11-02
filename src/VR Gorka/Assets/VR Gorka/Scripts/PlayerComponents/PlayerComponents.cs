@@ -18,12 +18,14 @@ namespace VrGorka.PlayerComponents
         public WagonListGeneration.PlayerComponent wagonListGenerationComponent => _wagonListGenerationComponent;
         public RouteControls.PlayerComponent routeControlsComponent => _routeControlsComponent;
         public RouteJournal.PlayerComponent routeJournalComponent => _routeJournalComponent;
+        public RouteParameters.PlayerComponent routeParametersComponent => _routeParametersComponent;
         
         readonly TrainDataGeneration.PlayerComponent _trainDataGeneratorComponent;
         readonly TrainViewGeneration.PlayerComponent _trainViewGeneratorComponent;
         readonly WagonListGeneration.PlayerComponent _wagonListGenerationComponent;
         readonly RouteControls.PlayerComponent _routeControlsComponent;
         readonly RouteJournal.PlayerComponent _routeJournalComponent;
+        readonly RouteParameters.PlayerComponent _routeParametersComponent;
 
         public PlayerComponents(Context context)
         {
@@ -48,11 +50,17 @@ namespace VrGorka.PlayerComponents
 
             var routeJournalComponent = new RouteJournal.PlayerComponent(wagonListGenerationComponent.model);
 
+            var routeParametersComponent = new RouteParameters.PlayerComponent(
+                trainViewGeneratorComponent.model,
+                context.mainSpline,
+                context.branchSplines);
+
             _trainDataGeneratorComponent = trainDataGeneratorComponent;
             _trainViewGeneratorComponent = trainViewGeneratorComponent;
             _wagonListGenerationComponent = wagonListGenerationComponent;
             _routeControlsComponent = routeControlsComponent;
             _routeJournalComponent = routeJournalComponent;
+            _routeParametersComponent = routeParametersComponent;
         }
     }
 }

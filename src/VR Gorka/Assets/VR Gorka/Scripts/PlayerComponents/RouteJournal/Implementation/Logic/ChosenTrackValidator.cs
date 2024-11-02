@@ -18,6 +18,7 @@ namespace VrGorka.RouteJournal.Logic
         public void ValidateChosenTrack(string id, int track)
         {
             Data.StatusData statusData = _journalData.statusMap[id];
+            statusData.isSwitched = true;
             
             if (track != statusData.targetTrack)
             {

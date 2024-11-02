@@ -10,7 +10,9 @@
         "UI",
         "Movables",
         "Utils",
-        "RouteJournal"
+        "RouteJournal",
+        "RouteStop",
+        "RoutePatameters"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

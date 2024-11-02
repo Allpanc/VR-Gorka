@@ -1,16 +1,9 @@
 {
-    "name": "PlayerComponents",
+    "name": "RouteStop",
     "rootNamespace": "",
     "references": [
-        "Movables",
-        "RouteControls",
-        "RouteFollowers",
-        "RouteJournal",
-        "TrainDataGeneration",
-        "TrainViewGeneration",
-        "WagonListDataGeneration",
-        "RoutePatameters",
-        "Dreamteck.Splines"
+        "Dreamteck.Splines",
+        "Movables"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

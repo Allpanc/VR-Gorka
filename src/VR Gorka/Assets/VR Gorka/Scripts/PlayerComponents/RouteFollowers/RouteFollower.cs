@@ -23,6 +23,7 @@ namespace VrGorka.RouteFollowers
             _routeSwitcher.Prepare(context.mainSpline, context.splinePercent);
             _junction = context.junction;
             _branchSplines = context.branchSplines;
+            SetRoute(0);
         }
 
         public void SetRoute(int routeIndex)
