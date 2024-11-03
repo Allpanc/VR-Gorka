@@ -31,9 +31,10 @@ namespace VrGorka.UI
             for (var index = 0; index < routeControlWidgets.Count; index++)
             {
                 var widget = routeControlWidgets[index];
+                
                 widget.Prepare(new RouteControlWidget.Context
                 {
-                    routeIndex = index,
+                    routeIndex = index
                 });
 
                 widget.routeChangeRequired += OnRouteChangeRequired;

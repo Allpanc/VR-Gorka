@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace VrGorka.GameStates
 {
@@ -15,6 +16,8 @@ namespace VrGorka.GameStates
             public UI.CountdownMenu countdownMenu;
             public UI.LoseMenu loseMenu;
             public UI.WinMenu winMenu;
+            public GameObject teleport;
+            public GameObject teleportArea;
         }
         
         readonly Dictionary<Type, IExitableState> _states;
@@ -31,7 +34,9 @@ namespace VrGorka.GameStates
                     context.routeControlsMenu,
                     context.startMenu,
                     context.tutorialMenu,
-                    context.countdownMenu),
+                    context.countdownMenu,
+                    context.teleport,
+                    context.teleportArea),
                 
                 [typeof(TutorialState)] = new TutorialState(
                     this,

@@ -43,6 +43,10 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		public void Start()
 		{
+			if (Teleport.instance == null)
+			{
+				Debug.LogError( "Teleport instance null" );
+			}
 			visibleTintColor = Teleport.instance.areaVisibleMaterial.GetColor( tintColorId );
 			highlightedTintColor = Teleport.instance.areaHighlightedMaterial.GetColor( tintColorId );
 			lockedTintColor = Teleport.instance.areaLockedMaterial.GetColor( tintColorId );

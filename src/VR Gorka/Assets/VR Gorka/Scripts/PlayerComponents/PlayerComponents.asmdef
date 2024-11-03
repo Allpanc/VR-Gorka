@@ -10,6 +10,7 @@
         "TrainViewGeneration",
         "WagonListDataGeneration",
         "RoutePatameters",
+        "PlayerSpawn",
         "Dreamteck.Splines"
     ],
     "includePlatforms": [],

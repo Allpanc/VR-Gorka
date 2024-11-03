@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace VrGorka.UI
@@ -11,8 +10,16 @@ namespace VrGorka.UI
         public class Context
         {
             public WagonListGeneration.WagonListItemData wagonListItemData;
+            public bool isOutlined;
         }
         
+        public bool isOutlined
+        {
+            get => _outlineImage.enabled;
+            set => _outlineImage.enabled = value;
+        }
+        
+        [SerializeField] Image _outlineImage;
         [SerializeField] TMP_Text _idText;
         [SerializeField] TMP_Text _targetTrackText;
         [SerializeField] Image _statusImage; 
@@ -26,6 +33,7 @@ namespace VrGorka.UI
         {
             DisplayItem(context.wagonListItemData);
             DisplayStatus(RouteJournal.Status.Unset);
+            isOutlined = context.isOutlined;
         }
 
         public void DisplayStatus(RouteJournal.Status status)
