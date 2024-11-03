@@ -7,6 +7,9 @@ namespace VrGorka.EntryPoint
     public class SceneBindings : MonoBehaviour
     {
         public Transform trainParent;
+        public Transform playerParent;
+        public GameObject teleport;
+        public GameObject teleportArea;
         public SplineComputer mainSpline;
         public SplineComputer[] branchSplines;
         public Node junction;

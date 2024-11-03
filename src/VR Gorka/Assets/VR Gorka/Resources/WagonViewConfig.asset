@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wagonGap: 0.03
   timeBetweenWagons: 3
-  wagonsSpeed: 8
+  wagonsSpeed: 5
   wagonPrefabs:
   - type: 0
     prefab: {fileID: 6592573733331753297, guid: 19a719c7e2f82e5408ab99bc2fa52dfd, type: 3}

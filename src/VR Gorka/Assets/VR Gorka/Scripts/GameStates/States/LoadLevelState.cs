@@ -1,7 +1,12 @@
+using UnityEngine;
+
 namespace VrGorka.GameStates
 {
     public class LoadLevelState : IState
     {
+        PlayerSpawn.IModel playerSpawnModel => _playerComponents.playerSpawnComponent.model;
+        PlayerSpawn.IController playerSpawnController => _playerComponents.playerSpawnComponent.controller;
+        
         readonly GameStateMachine _gameStateMachine;
         readonly PlayerComponents.PlayerComponents _playerComponents;
         readonly UI.WagonListMenu _wagonListMenu;
@@ -9,6 +14,8 @@ namespace VrGorka.GameStates
         readonly UI.StartMenu _startMenu;
         readonly UI.TutorialMenu _tutorialMenu;
         readonly UI.CountdownMenu _countdownMenu;
+        readonly GameObject _teleport;
+        readonly GameObject _teleportArea;
 
         public LoadLevelState(
             GameStateMachine gameStateMachine,
@@ -17,7 +24,9 @@ namespace VrGorka.GameStates
             UI.RouteControlsMenu routeControlsMenu,
             UI.StartMenu startMenu,
             UI.TutorialMenu tutorialMenu,
-            UI.CountdownMenu countdownMenu)
+            UI.CountdownMenu countdownMenu,
+            GameObject teleport,
+            GameObject teleportArea)
         {
             _gameStateMachine = gameStateMachine;
             _playerComponents = playerComponents;
@@ -26,10 +35,17 @@ namespace VrGorka.GameStates
             _startMenu = startMenu;
             _tutorialMenu = tutorialMenu;
             _countdownMenu = countdownMenu;
+            _teleport = teleport;
+            _teleportArea = teleportArea;
         }
 
         public void Enter()
         {
+            SpawnPlayer();
+            
+            _teleport.gameObject.SetActive(true);
+            _teleportArea.gameObject.SetActive(true);
+            
             TrainViewGeneration.TrainViewData trainViewData = 
                 _playerComponents.trainViewGeneratorComponent.model.trainViewData;
             
@@ -63,6 +79,18 @@ namespace VrGorka.GameStates
         public void Exit()
         {
             
+        }
+
+        private void SpawnPlayer()
+        {
+            bool isPlayerPresent = playerSpawnModel.isPlayerPresent;
+
+            if (isPlayerPresent)
+            {
+                return;
+            }
+
+            var spawnPlayer = playerSpawnController.SpawnPlayer();
         }
 
         private void ShowStartOrTutorial()

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using VrGorka.GameStates;
 
@@ -19,7 +18,9 @@ namespace VrGorka.EntryPoint
                 tutorialMenu = _sceneBindings.tutorialMenu,
                 countdownMenu = _sceneBindings.countdownMenu,
                 loseMenu = _sceneBindings.loseMenu,
-                winMenu = _sceneBindings.winMenu
+                winMenu = _sceneBindings.winMenu,
+                teleport = _sceneBindings.teleport,
+                teleportArea = _sceneBindings.teleportArea
             };
 
             var gameStateMachine = new GameStateMachine(gameStateMachineContext);
@@ -32,6 +33,7 @@ namespace VrGorka.EntryPoint
             var playerComponentsContext = new PlayerComponents.PlayerComponents.Context
             {
                 trainParent = _sceneBindings.trainParent,
+                playerParent = _sceneBindings.playerParent,
                 mainSpline = _sceneBindings.mainSpline,
                 branchSplines = _sceneBindings.branchSplines,
                 junction = _sceneBindings.junction

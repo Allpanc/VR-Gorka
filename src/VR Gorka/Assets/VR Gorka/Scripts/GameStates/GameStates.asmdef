@@ -12,7 +12,8 @@
         "Utils",
         "RouteJournal",
         "RouteStop",
-        "RoutePatameters"
+        "RoutePatameters",
+        "PlayerSpawn"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

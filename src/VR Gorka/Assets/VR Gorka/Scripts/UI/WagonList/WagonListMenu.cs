@@ -13,7 +13,7 @@ namespace VrGorka.UI
         [SerializeField] RectTransform _itemsContainer;
         [SerializeField] WagonListItemWidget _itemWidgetPrefab;
 
-        private Dictionary<string,WagonListItemWidget> _wagonInfoWidgetsMap;
+        Dictionary<string,WagonListItemWidget> _wagonInfoWidgetsMap;
         
         public void Prepare(Context context)
         {
@@ -41,9 +41,30 @@ namespace VrGorka.UI
 
         public void UpdateStatus(Dictionary<string, RouteJournal.Status> statusMap)
         {
+            bool outlineNext = false;
+            bool isOutlineNextUsed = false;
+            
             foreach (var (id, widget) in _wagonInfoWidgetsMap)
             {
-                widget.DisplayStatus(statusMap[id]);
+                RouteJournal.Status status = statusMap[id];
+                widget.DisplayStatus(status);
+
+                if (isOutlineNextUsed)
+                {
+                    continue;
+                }
+
+                if (outlineNext)
+                {
+                    widget.isOutlined = true;
+                    isOutlineNextUsed = true;
+                }
+                
+                if (widget.isOutlined && !outlineNext)
+                {
+                    widget.isOutlined = false;
+                    outlineNext = true;
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ namespace VrGorka.PlayerComponents
         public class Context
         {
             public Transform trainParent;
+            public Transform playerParent;
             public SplineComputer mainSpline;
             public SplineComputer[] branchSplines;
             public Node junction;
@@ -19,6 +20,7 @@ namespace VrGorka.PlayerComponents
         public RouteControls.PlayerComponent routeControlsComponent => _routeControlsComponent;
         public RouteJournal.PlayerComponent routeJournalComponent => _routeJournalComponent;
         public RouteParameters.PlayerComponent routeParametersComponent => _routeParametersComponent;
+        public PlayerSpawn.PlayerComponent playerSpawnComponent => _playerSpawnComponent;
         
         readonly TrainDataGeneration.PlayerComponent _trainDataGeneratorComponent;
         readonly TrainViewGeneration.PlayerComponent _trainViewGeneratorComponent;
@@ -26,6 +28,7 @@ namespace VrGorka.PlayerComponents
         readonly RouteControls.PlayerComponent _routeControlsComponent;
         readonly RouteJournal.PlayerComponent _routeJournalComponent;
         readonly RouteParameters.PlayerComponent _routeParametersComponent;
+        readonly PlayerSpawn.PlayerComponent _playerSpawnComponent;
 
         public PlayerComponents(Context context)
         {
@@ -55,12 +58,15 @@ namespace VrGorka.PlayerComponents
                 context.mainSpline,
                 context.branchSplines);
 
+            var playerSpawnComponent = new PlayerSpawn.PlayerComponent(context.playerParent);
+
             _trainDataGeneratorComponent = trainDataGeneratorComponent;
             _trainViewGeneratorComponent = trainViewGeneratorComponent;
             _wagonListGenerationComponent = wagonListGenerationComponent;
             _routeControlsComponent = routeControlsComponent;
             _routeJournalComponent = routeJournalComponent;
             _routeParametersComponent = routeParametersComponent;
+            _playerSpawnComponent = playerSpawnComponent;
         }
     }
 }
