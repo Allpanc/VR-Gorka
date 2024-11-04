@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6933974385935024611}
   - component: {fileID: 7167676362119171995}
   - component: {fileID: 5059321423992238950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3528571703502413949}
   - component: {fileID: 300106027713052840}
   - component: {fileID: 7550426425503778808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 6329463871173319057}
   - component: {fileID: 6767017471114595997}
   - component: {fileID: 845592676748090936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 8992050098573216569}
   - component: {fileID: 153155091908500501}
   - component: {fileID: 988364900502340335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,9 @@ GameObject:
   - component: {fileID: 773790216422179639}
   - component: {fileID: 7247647073357276686}
   - component: {fileID: 7554708940773751263}
-  m_Layer: 0
+  - component: {fileID: 4591246721050173427}
+  - component: {fileID: 4559033408488852639}
+  m_Layer: 6
   m_Name: BaseWagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,3 +627,38 @@ MonoBehaviour:
   _unityOnBeginningReached:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &4591246721050173427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138138050226127341}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4559033408488852639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138138050226127341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a33029ef1d4ee7a35b744e3294766b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _splineFollower: {fileID: 7554708940773751263}
+  slowDownPercent: 0.5
