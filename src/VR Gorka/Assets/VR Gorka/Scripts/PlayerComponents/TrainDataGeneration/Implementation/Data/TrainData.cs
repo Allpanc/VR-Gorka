@@ -15,8 +15,10 @@ namespace VrGorka.TrainDataGeneration
 
     public enum WagonType
     {
-        Red,
-        Green,
-        Blue
+        Container,
+        Forest,
+        Gondola,
+        Tank,
+        Platform
     }
 }

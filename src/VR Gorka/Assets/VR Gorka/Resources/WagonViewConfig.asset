@@ -17,8 +17,12 @@ MonoBehaviour:
   wagonsSpeed: 5
   wagonPrefabs:
   - type: 0
-    prefab: {fileID: 6592573733331753297, guid: 19a719c7e2f82e5408ab99bc2fa52dfd, type: 3}
+    prefab: {fileID: 6124314959062722349, guid: d03d6bed5951f4541a98867601b8cff6, type: 3}
   - type: 1
     prefab: {fileID: 740044890635642865, guid: e0a270fbe582e464582739b95ea90d96, type: 3}
   - type: 2
-    prefab: {fileID: 6124314959062722349, guid: d03d6bed5951f4541a98867601b8cff6, type: 3}
+    prefab: {fileID: 6592573733331753297, guid: 19a719c7e2f82e5408ab99bc2fa52dfd, type: 3}
+  - type: 3
+    prefab: {fileID: 5762936487510335780, guid: 7cac72210329faa4a9d9ff7598a01820, type: 3}
+  - type: 4
+    prefab: {fileID: 253884089871644157, guid: fb6f79c8b89d731428fc72bd73ff4543, type: 3}
