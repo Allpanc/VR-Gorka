@@ -1,8 +1,5 @@
 using System;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace VrGorka.UI
 {
@@ -13,28 +10,56 @@ namespace VrGorka.UI
             public int routeIndex;
         }
 
-        public bool isOutlined
+        [Serializable]
+        public class SignalLightSettings
         {
-            get => _outlineImage.enabled;
-            set => _outlineImage.enabled = value;
+            public Material disabledMaterial;
+            public Material signalMaterial;
+        }
+
+        public bool isHighlighted
+        {
+            get => _isHighlighted;
+            set
+            {
+                if (_isHighlighted == value)
+                {
+                    return;
+                }
+                
+                _isHighlighted = value; 
+                
+                _signalLightMesh.material = _isHighlighted
+                    ? _signalLightSettings.signalMaterial
+                    : _signalLightSettings.disabledMaterial;
+
+                if (_isHighlighted)
+                {
+                    _routeControlAnimator.PlayPressed();
+                    return;
+                }
+
+                _routeControlAnimator.PlayReleased();
+            } 
         }
         
         public event Action<int> routeChangeRequired;
         
-        [SerializeField] Button _button;
-        [SerializeField] TMP_Text _text;
-        [SerializeField] Image _outlineImage;
+        [SerializeField] ButtonTrigger _buttonTrigger;
+        [SerializeField] MeshRenderer _signalLightMesh;
+        [SerializeField] RouteControlAnimator _routeControlAnimator;
+        [SerializeField] SignalLightSettings _signalLightSettings;
 
-        int _routeIndex;
+        private int _routeIndex;
+        private bool _isHighlighted;
         
         public void Prepare(Context context)
         {
             _routeIndex = context.routeIndex;
-            _text.text = (_routeIndex + 1).ToString();
-            _button.onClick.AddListener(OnButtonClick);
+            _buttonTrigger.onClicked += HandleClicked;
         }
 
-        private void OnButtonClick()
+        private void HandleClicked()
         {
             routeChangeRequired?.Invoke(_routeIndex);
         }

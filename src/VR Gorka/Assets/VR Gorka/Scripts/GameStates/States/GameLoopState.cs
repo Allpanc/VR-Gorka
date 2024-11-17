@@ -43,7 +43,7 @@ namespace VrGorka.GameStates
         public void Enter()
         {
             _wagonListMenu.gameObject.SetActive(true);
-            _routeControlsMenu.gameObject.SetActive(true);
+            _routeControlsMenu.EnableInteraction();
             
             _wagonsCoroutine = _coroutineRunner.RunCoroutine(MoveWagons());
             routeJournalEvents.wrongTrackChosen += OnWrongTrackChosen;
@@ -78,7 +78,7 @@ namespace VrGorka.GameStates
 
         public void Exit()
         {
-            _routeControlsMenu.gameObject.SetActive(false);
+            _routeControlsMenu.DisableInteraction();
             
             routeJournalEvents.wrongTrackChosen -= OnWrongTrackChosen;
             routeJournalEvents.rightTrackChosen -= OnRightTrackChosen;

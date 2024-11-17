@@ -26,8 +26,26 @@ namespace VrGorka.UI
             _trainViewData = context.trainViewData;
         }
 
+        public void EnableInteraction()
+        {
+            foreach (var widget in routeControlWidgets)
+            {
+                widget.routeChangeRequired += OnRouteChangeRequired;
+            }
+        }
+
+        public void DisableInteraction()
+        {
+            foreach (var widget in routeControlWidgets)
+            {
+                widget.routeChangeRequired -= OnRouteChangeRequired;
+            }
+        }
+
         private void PrepareWidgets()
         {
+            routeControlWidgets[0].isHighlighted = true;
+            
             for (var index = 0; index < routeControlWidgets.Count; index++)
             {
                 var widget = routeControlWidgets[index];
@@ -36,8 +54,6 @@ namespace VrGorka.UI
                 {
                     routeIndex = index
                 });
-
-                widget.routeChangeRequired += OnRouteChangeRequired;
             }
         }
 
@@ -45,7 +61,7 @@ namespace VrGorka.UI
         {
             for (var i = 0; i < routeControlWidgets.Count; i++)
             {
-                routeControlWidgets[i].isOutlined = i == routeIndex;
+                routeControlWidgets[i].isHighlighted = i == routeIndex;
             }
             
             if (_routeControlsModel.activeRoute == routeIndex)
