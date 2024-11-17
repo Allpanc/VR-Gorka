@@ -816,7 +816,7 @@ MonoBehaviour:
     needsReinit: 1
   useHoverSphere: 1
   hoverSphereTransform: {fileID: 2330278514951370753}
-  hoverSphereRadius: 0.075
+  hoverSphereRadius: 0.0375
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2018,7 +2018,7 @@ MonoBehaviour:
     needsReinit: 1
   useHoverSphere: 1
   hoverSphereTransform: {fileID: 5706644200682917344}
-  hoverSphereRadius: 0.075
+  hoverSphereRadius: 0.0375
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7b613be05e489fb8aa1231926b2f22, type: 3}
   m_Name: WagonViewConfig
   m_EditorClassIdentifier: 
-  wagonGap: 0.03
-  timeBetweenWagons: 3
+  wagonGap: 0.038
+  timeBetweenWagons: 10
   wagonsSpeed: 5
   wagonPrefabs:
   - type: 0

@@ -6,7 +6,8 @@
         "RouteControls",
         "TrainViewGeneration",
         "Unity.TextMeshPro",
-        "RouteJournal"
+        "RouteJournal",
+        "SteamVR"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

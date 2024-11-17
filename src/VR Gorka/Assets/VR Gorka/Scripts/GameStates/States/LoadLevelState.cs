@@ -52,9 +52,6 @@ namespace VrGorka.GameStates
             WagonListGeneration.WagonListData wagonListData =
                 _playerComponents.wagonListGenerationComponent.model.wagonListData;
             
-            _wagonListMenu.gameObject.SetActive(true);
-            _routeControlsMenu.gameObject.SetActive(true);
-            
             _wagonListMenu.Prepare(new UI.WagonListMenu.Context
             {
                 wagonListData = wagonListData
@@ -66,9 +63,7 @@ namespace VrGorka.GameStates
                 routeControlsModel = _playerComponents.routeControlsComponent.model,
                 trainViewData = trainViewData
             });
-
-            _wagonListMenu.gameObject.SetActive(false);
-            _routeControlsMenu.gameObject.SetActive(false);
+            
             _tutorialMenu.gameObject.SetActive(false);
             _startMenu.gameObject.SetActive(false);
             _countdownMenu.gameObject.SetActive(false);
